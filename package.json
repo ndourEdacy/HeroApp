@@ -1,13 +1,26 @@
 {
   "name": "app-heroku",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "This example is so cool.",
+  "main": "web.js",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "http-server",
+    "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor",
+    "preinstall": "npm install -g http-server",
+    "postinstall": "ng build && mv dist/* ."
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "jane-doe",
+  "license": "MIT",
+  "engines": {
+    "node": "10.x",
+    "yarn": "1.x"
   },
   "private": true,
   "dependencies": {
